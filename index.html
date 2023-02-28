@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-fluid bg-light bg-gradient pt-5 pb-5">
+        <div class="container w-50 mx-auto border border-dark pt-5 pb-5">
+            <div class="row w-75 mx-auto bg-info bg-gradient">
+                <div class="col-12 text-center fs-2">Create Account</div>
+                <span class="border border-dark mb-2"></span>
+                <form class="w-75 mx-auto pt-3 pb-5" id="form" method="get" action="">
+                    <div class="mb-3">
+                        <label for="" class="form-label">Username :</label>
+                        <input type="text" class="form-control" id="input" autocomplete="off" onkeyup="validation()">
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label"> Repeat Password</label>
+                        <input type="password2" class="form-control" id="repassword">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary" >Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script>
+       function validation(){
+        let username = document.getElementById("input").value;
+        let userpattern  = /[a-zA-Z][a-zA-Z0-9-_]{3,32}/gi;
+        if(userpattern.test(username)){
+            document.getElementById("input").style.backgroundColor = 'green';
+
+        }else{
+            document.getElementById("input").style.backgroundColor = 'red';
+        }
+       }
+        
+
+    </script>
+</body>
+
+</html>
